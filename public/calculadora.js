@@ -177,6 +177,11 @@ function limpiarTodo() {
   actualizarPantalla();
 }
 
+function limpiarEntrada() {
+  estado.actual = "0";
+  actualizarPantalla();
+}
+
 function borrarUno() {
   if (estado.despuesDeIgual) return;
   if (estado.actual.length > 1) {
@@ -226,7 +231,8 @@ document.addEventListener("click", (evento) => {
     return;
   }
   switch (valor) {
-    case "AC": limpiarTodo(); break;
+    case "C": limpiarTodo(); break;
+    case "CE": limpiarEntrada(); break;
     case "DEL": borrarUno(); break;
     case "=": calcularResultado(); break;
     case "x²":
