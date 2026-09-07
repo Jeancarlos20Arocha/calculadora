@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculadora">
+    <header class="barra">
+      <span class="titulo">Calculadora</span>
+      <div class="controles">
+        <button id="btnTema" class="boton-icono" title="Cambiar tema" aria-label="Cambiar tema">🌙</button>
+        <select id="selDecimales" aria-label="Número de decimales">
+          <option value="0">0</option>
+          <option value="2" selected>2</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+    </header>
+
+    <section class="pantalla">
+      <div id="historial" class="historial"></div>
+      <input id="pantalla" class="display" value="0" readonly aria-label="Pantalla">
+      <div id="expresion" class="expresion">Resultado</div>
+    </section>
+
+    <section class="memoria">
+      <button class="boton-memoria" data-accion="MC" title="Limpiar memoria">MC</button>
+      <button class="boton-memoria" data-accion="MR" title="Leer memoria">MR</button>
+      <button class="boton-memoria" data-accion="MS" title="Guardar en memoria">MS</button>
+      <button class="boton-memoria" data-accion="M+" title="Sumar a memoria">M+</button>
+      <button class="boton-memoria" data-accion="M-" title="Restar a memoria">M−</button>
+    </section>
+
+    <section class="teclado">
+      <button class="tecla funcion" data-valor="AC">AC</button>
+      <button class="tecla funcion" data-valor="DEL">⌫</button>
+      <button class="tecla funcion" data-valor="%">%</button>
+      <button class="tecla operacion" data-valor="/">÷</button>
+
+      <button class="tecla funcion" data-valor="x²">x²</button>
+      <button class="tecla funcion" data-valor="√">√</button>
+      <button class="tecla funcion" data-valor="1/x">1/x</button>
+      <button class="tecla operacion" data-valor="*">×</button>
+
+      <button class="tecla numero" data-valor="7">7</button>
+      <button class="tecla numero" data-valor="8">8</button>
+      <button class="tecla numero" data-valor="9">9</button>
+      <button class="tecla operacion" data-valor="-">−</button>
+
+      <button class="tecla numero" data-valor="4">4</button>
+      <button class="tecla numero" data-valor="5">5</button>
+      <button class="tecla numero" data-valor="6">6</button>
+      <button class="tecla operacion" data-valor="+">+</button>
+
+      <button class="tecla numero" data-valor="1">1</button>
+      <button class="tecla numero" data-valor="2">2</button>
+      <button class="tecla numero" data-valor="3">3</button>
+      <button class="tecla funcion" data-valor="±">±</button>
+
+      <button class="tecla numero cero" data-valor="0">0</button>
+      <button class="tecla numero" data-valor=".">.</button>
+      <button class="tecla funcion" data-valor="^">^</button>
+      <button class="tecla igual" data-valor="=">=</button>
+    </section>
+
+    <section class="historialCompleto" id="panelHistorial">
+      <div class="historialCabecera">
+        <span>Historial</span>
+        <button id="btnHistorial" class="boton-icono" title="Alternar historial">🕘</button>
+        <button id="btnLimpiarHistorial" class="boton-icono" title="Borrar historial">🗑️</button>
+      </div>
+      <div id="listaHistorial" class="listaHistorial"></div>
+    </section>
+  </div>
+
+  <script src="calculadora.js"></script>
+</body>
+</html>

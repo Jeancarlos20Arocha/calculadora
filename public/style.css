@@ -1,0 +1,237 @@
+:root {
+  --fondo: #0f172a;
+  --panel: #1e293b;
+  --tecla-numero: #334155;
+  --tecla-funcion: #475569;
+  --tecla-operacion: #0369a1;
+  --tecla-igual: #ea580c;
+  --texto: #f1f5f9;
+  --texto-suave: #94a3b8;
+  --borde: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  user-select: none;
+}
+
+body.claro {
+  --fondo: #f8fafc;
+  --panel: #ffffff;
+  --tecla-numero: #e2e8f0;
+  --tecla-funcion: #cbd5e1;
+  --tecla-operacion: #38bdf8;
+  --tecla-igual: #fb923c;
+  --texto: #0f172a;
+  --texto-suave: #64748b;
+  --borde: rgba(0, 0, 0, 0.1);
+}
+
+.calculadora {
+  width: 420px;
+  height: 660px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--panel);
+  border-radius: 18px;
+  border: 1px solid var(--borde);
+  padding: 14px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 6px;
+}
+
+.titulo {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.controles {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.boton-icono {
+  background: var(--tecla-funcion);
+  border: none;
+  color: var(--texto);
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.boton-icono:hover {
+  filter: brightness(1.2);
+}
+
+select {
+  background: var(--tecla-funcion);
+  color: var(--texto);
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.pantalla {
+  background: var(--fondo);
+  border-radius: 14px;
+  padding: 12px 16px;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--borde);
+}
+
+.historial {
+  font-size: 13px;
+  color: var(--texto-suave);
+  min-height: 18px;
+  text-align: right;
+  word-break: break-all;
+}
+
+.expresion {
+  font-size: 14px;
+  color: var(--texto-suave);
+  text-align: right;
+}
+
+.display {
+  background: transparent;
+  border: none;
+  color: var(--texto);
+  font-size: 42px;
+  font-weight: 700;
+  text-align: right;
+  outline: none;
+  width: 100%;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.memoria {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.boton-memoria {
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  color: var(--texto-suave);
+  border-radius: 8px;
+  padding: 7px 0;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.boton-memoria:hover {
+  color: var(--texto);
+  border-color: var(--texto-suave);
+}
+
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  flex: 1;
+}
+
+.tecla {
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--texto);
+  transition: filter 0.08s;
+}
+
+.tecla:hover {
+  filter: brightness(1.15);
+}
+
+.tecla:active {
+  filter: brightness(0.85);
+}
+
+.tecla.numero {
+  background: var(--tecla-numero);
+}
+
+.tecla.funcion {
+  background: var(--tecla-funcion);
+  font-size: 16px;
+}
+
+.tecla.operacion {
+  background: var(--tecla-operacion);
+}
+
+.tecla.igual {
+  background: var(--tecla-igual);
+  grid-column: span 1;
+}
+
+.tecla.cero {
+  grid-column: span 1;
+}
+
+.historialCompleto {
+  border-top: 1px solid var(--borde);
+  padding-top: 10px;
+}
+
+.historialCabecera {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+.historialCabecera span {
+  flex: 1;
+}
+
+.listaHistorial {
+  max-height: 108px;
+  overflow-y: auto;
+  font-size: 13px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.listaHistorial .entrada {
+  display: flex;
+  justify-content: space-between;
+  color: var(--texto-suave);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.listaHistorial .entrada:hover {
+  background: var(--fondo);
+}
+
+.entrada b {
+  color: var(--texto);
+  font-weight: 600;
+}

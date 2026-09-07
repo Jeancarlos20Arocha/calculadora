@@ -1,0 +1,33 @@
+{
+  "name": "calculadora-app",
+  "version": "1.0.0",
+  "description": "Calculadora moderna para PC (Windows)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "author": "Jeancarlos",
+  "license": "MIT",
+  "build": {
+    "appId": "com.jeancarlos.calculadora",
+    "productName": "Calculadora",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "public/**/*"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "build/icon.png"
+    }
+  },
+  "devDependencies": {
+    "electron": "^44.2.0",
+    "electron-builder": "^26.15.3"
+  }
+}
